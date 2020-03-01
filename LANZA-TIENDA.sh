@@ -101,6 +101,13 @@ then
 else
      export ES_NUEVA_INSTALACION=""
 fi
+
+if [ "$3" == "NOIMAGEN" ];
+then
+     export IMAGEN="NO"
+else
+     export IMAGEN="SI"
+fi
  
 
 export ES_SSL ENTORNO_UPPER PUERTO_SSL ENTORNO SUFIJO_NOMBRE_CONTENEDOR

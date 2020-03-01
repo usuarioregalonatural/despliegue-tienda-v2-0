@@ -62,9 +62,21 @@ parsea_restore_db_regalonatural
 
 copia_base_files
 recoge_cert_ssl
+echo "Este es el valor de IMAGEN: ${IMAGEN}"
+if [ "${IMAGEN}" == "NO" ];
+then
+        log "###################################################"
+        log "##    NO REGENERA LA IMAGEN. LA REUTILIZA        ##"
+        log "###################################################"
 
-construye_imagen_www
-#eliminar_contenedor 
+else
+        log "###################################################"
+        log "##           REGENERA LA IMAGEN.                 ##"
+        log "###################################################"
+	construye_imagen_www
+fi
+
+eliminar_contenedor 
 #construye_cmd_docker
 ejecuta_compose
 
